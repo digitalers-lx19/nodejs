@@ -1,0 +1,16 @@
+# Gestores de paquetes
+jspm_packages/
+node_modules/
+*lock.json
+# Registros de Cambios
+logs/
+*.log*
+# Entorno de Trabajo
+.vscode
+.env*
+# Compilacion y Distribucion
+build/
+dist/
+# Sistema Operativo
+.DS_Store
+Thumbs.db
