@@ -24,3 +24,8 @@ Esto es una guia para los alumnos de la capacitacion __Digitalers NodeJS__ que c
     * [fs](./docs/built-in/fs.md)
     * [http](./docs/built-in/http.md)
     * [events](./docs/built-in/events.md)
+* Patrones de Desarrollo
+    * [DAO](./docs/pattern/dao.md)
+    * [DTO](./docs/pattern/dto.md)
+    * [MRC](./docs/pattern/mrc.md)
+    * [MVC](./docs/pattern/mvc.md)
