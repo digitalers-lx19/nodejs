@@ -1,13 +1,19 @@
 import { configDotenv } from "dotenv";
 import express from "express";
+import dbConn from "./src/config/db.js";
+import userRouter from "./src/routes/user.router.js";
 
-const dotEnv = configDotenv()
+const dotEnv = configDotenv();
 const { parsed: {
     HOST,
     PORT,
     URI,
 }} = dotEnv
-const app = express()
+const app = express();
+
+dbConn(URI);
+app.use("/users", userRouter);
+
 
 app.get("/", (req, res) => {
     res.json({
@@ -33,5 +39,4 @@ app.delete("/", (req, res) => {
         message: "DATOS ELIMINADOS EXITOSAMENTE"
     })
 });
-
 app.listen(PORT);
