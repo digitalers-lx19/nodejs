@@ -9,3 +9,11 @@ Esto es una guia para los alumnos de la capacitacion __Digitalers NodeJS__ que c
 * [Postman](https://www.npmjs.com): API para pruebas de BackEnd (Rutas)
 * [VSCode](https://code.visualstudio.com): Editor de codigo con TS integrado
 * [MongoDB](https://www.mongodb.com/try/download/community): Servidor de Bases de Datos NoSQL
+
+## Tabla de Contenidos
+
+* [REPL](./docs/repl.md)
+* Objetos Globales
+    * [console](./docs/global/console.md)
+    * [process](./docs/global/process.md)
+    * [timers](./docs/global/timers.md)
