@@ -29,3 +29,8 @@ Esto es una guia para los alumnos de la capacitacion __Digitalers NodeJS__ que c
     * [DTO](./docs/pattern/dto.md)
     * [MRC](./docs/pattern/mrc.md)
     * [MVC](./docs/pattern/mvc.md)
+* [Bases de Datos](./docs/db.md)
+* Modelos de Plantillas
+    * [Pug](./docs/templates/pug.md)
+    * [EJS](./docs/templates/ejs.md)
+    * [HandleBars](./docs/templates/hbs.md)
