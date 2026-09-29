@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: var(--font);
+}
+:root {
+    --font: 'Raleway', 'Poppins', 'Century Gothic', sans-serif;
+    --base: 1rem;
+    --tiny: 60px;
+    --small: 120px;
+    --medium: 240px;
+    --large: 360px;
+    --jumbo: 480px;
+}
+.checker {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--color);
+}
+.checker-red {
+    --color: #c33;
+}
+.checker-black{
+    --color: #333;
+}
+.checker-blue {
+    --color: #248;
+}
+.checker-indigo {
+    --color: #446;
+}
+.checker-pink {
+    --color: #c36;
+}
+.checker-green {
+    --color: #3a6;
+}
