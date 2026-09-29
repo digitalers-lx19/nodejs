@@ -1,4 +1,5 @@
 import { configDotenv } from "dotenv";
+import morgan from "morgan";
 import express from "express";
 import dbConn from "./src/config/db.js";
 import userRouter from "./src/routes/user.router.js";
@@ -8,35 +9,17 @@ const { parsed: {
     HOST,
     PORT,
     URI,
-}} = dotEnv
+    MONGODB_URI,
+}} = dotEnv;
 const app = express();
-
-dbConn(URI);
+dbConn(URI || MONGODB_URI);
+app.use(morgan("dev"));
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.engine();
+// Rutas de usuarios
 app.use("/users", userRouter);
-
-
-app.get("/", (req, res) => {
-    res.json({
-        method: req.method,
-        message: "NO SE ENCONTRARON DATOS"
-    })
-});
-app.post("/", (req, res) => {
-    res.json({
-        method: req.method,
-        message: "SOLICITUD CARGADA EXITOSAMENTE"
-    })
-});
-app.put("/", (req, res) => {
-    res.json({
-        method: req.method,
-        message: "DATOS ACTUALIZADOS EXITOSAMENTE"
-    })
-});
-app.delete("/", (req, res) => {
-    res.json({
-        method: req.method,
-        message: "DATOS ELIMINADOS EXITOSAMENTE"
-    })
-});
-app.listen(PORT);
+// Archivos Estaticos
+app.use(express.static("public"));
+app.listen(PORT, () => console.log(`servidor ejecutandose en http://${HOST}:${PORT}`));
