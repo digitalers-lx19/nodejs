@@ -3,6 +3,7 @@ import { Router } from 'express';
 
 const userRouter = Router();
 userRouter.get('/', userController.getAll);
+userRouter.get('/search', userController.getByRange);
 userRouter.get('/:id', userController.getById);
 userRouter.post('/', userController.create);
 userRouter.put('/:id', userController.update);
