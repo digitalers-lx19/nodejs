@@ -4,6 +4,8 @@ const userDao = {
         await UserModel.find(),
     getById: async (id) => 
         await UserModel.findById(id),
+    getByNameOrEmail: async (username, email) => 
+        await UserModel.find({ $or: { username, email } }),
     getByRange: async (from, to) => 
         await UserModel.find({updatedAt: { $gte: from, $lte: to }}),
     create: async (user) => 
