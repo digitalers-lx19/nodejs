@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node .",
     "dev": "node --watch .",
-    "test": "cucumber-js tests/features/calculator.feature --require tests/steps/calculator.steps.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [
     "Programa de Cursos de Telecom Digitalers en colaboracion con EducacionIT",
@@ -16,6 +16,6 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "@cucumber/cucumber": "^13.3.0"
+    "jest": "^30.5.2"
   }
 }

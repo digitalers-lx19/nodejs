@@ -1,6 +1,6 @@
 console.log(
     "NodeJS Digitalers",
-    "\nCalculadora - Rama behavior-driven (BDD)",
+    "\nCalculadora - Rama spec-driven (Jest)",
     "\nPresiona CTRL+C para terminar la ejecucion"
 );
 
