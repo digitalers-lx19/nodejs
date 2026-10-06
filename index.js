@@ -1,6 +1,6 @@
 console.log(
     "NodeJS Digitalers",
-    "\nCalculadora - Rama spec-driven (Jest)",
+    "\nCalculadora - Rama accurate-driven (Property-Based Testing)",
     "\nPresiona CTRL+C para terminar la ejecucion"
 );
 
