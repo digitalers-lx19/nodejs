@@ -1,12 +1,12 @@
 {
-  "name": "nodejs digitalers",
+  "name": "nodejs-digitalers",
   "version": "0.0.0",
   "description": "Capacitacion Telecom Digitalers con Node",
   "main": "index.js",
   "scripts": {
     "start": "node .",
     "dev": "node --watch .",
-    "test": "node tests/"
+    "test": "cucumber-js tests/features/calculator.feature --require tests/steps/calculator.steps.js"
   },
   "keywords": [
     "Programa de Cursos de Telecom Digitalers en colaboracion con EducacionIT",
@@ -14,5 +14,8 @@
   ],
   "author": "Cristian Racedo",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module",
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.3.0"
+  }
 }

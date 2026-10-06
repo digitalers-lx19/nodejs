@@ -1,6 +1,9 @@
 console.log(
     "NodeJS Digitalers",
-    "\nPunto de Entrada Principal",
-    "\nEl codigo de la aplicacion va aqui",
+    "\nCalculadora - Rama behavior-driven (BDD)",
     "\nPresiona CTRL+C para terminar la ejecucion"
 );
+
+import { add, subtract, multiply, divide, power, sqrt, modulo } from "./src/calculator.js";
+
+export { add, subtract, multiply, divide, power, sqrt, modulo };
