@@ -1,12 +1,12 @@
 const sum = (a, b) => a + b;
 const subtract = (a, b) => a - b;
-const multiply = (a, b) => a * b;
+const product = (a, b) => a * b;
 const modulo = (a, b) => a % b;
 function divide(a, b) {
     if (b === 0) throw new Error("No se puede dividir por cero");
     return a / b;
 }
-function power(base, exponent) {
+function pow(base, exponent) {
     if (base === 0 && exponent < 0) throw new Error("No se puede elevar cero a un exponente negativo");
     return Math.pow(base, exponent);
 }
@@ -15,4 +15,4 @@ function sqrt(value) {
     return Math.sqrt(value);
 }
 
-export { sum, subtract, multiply, divide, power, sqrt, modulo };
+export { sum, subtract, product, divide, pow, sqrt, modulo };
