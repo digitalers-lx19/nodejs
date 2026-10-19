@@ -14,5 +14,14 @@
   ],
   "author": "Cristian Racedo",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module",
+  "dependencies": {
+    "express": "^5.3.0",
+    "mongoose": "^9.11.2",
+    "socket.io": "^4.8.4"
+  },
+  "devDependencies": {
+    "dotenv": "^18.0.8",
+    "morgan": "^1.12.1"
+  }
 }
