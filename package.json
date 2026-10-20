@@ -1,12 +1,12 @@
 {
-  "name": "nodejs digitalers",
+  "name": "nodejs-digitalers",
   "version": "0.0.0",
   "description": "Capacitacion Telecom Digitalers con Node",
   "main": "index.js",
   "scripts": {
     "start": "node .",
     "dev": "node --watch .",
-    "test": "node --test tests/*.test.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [
     "Programa de Cursos de Telecom Digitalers en colaboracion con EducacionIT",
@@ -14,5 +14,8 @@
   ],
   "author": "Cristian Racedo",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
 }
