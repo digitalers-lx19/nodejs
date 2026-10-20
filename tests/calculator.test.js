@@ -1,67 +1,68 @@
-import { test, describe } from "node:test";
-import assert from "node:assert/strict";
+import { describe, test, expect } from "@jest/globals";
 import { sum, subtract, product, divide, pow, sqrt, modulo } from "../src/calculator.js";
 
-describe("Calculadora: Operaciones Basicas", () => {
-    test("sum: debe sumar dos números positivos", () => {
-        assert.strictEqual(sum(3, 6), 9);
+describe("Calculadora - Specification-Driven (Jest)", () => {
+    describe("Calculadora: Operaciones Basicas", () => {
+        test("debe sumar dos números positivos", () => {
+            expect(sum(3, 6)).toBe(9);
+        });
+        test("debe sumar números negativos", () => {
+            expect(sum(-3, -6)).toBe(-9);
+        });
+        test("debe sumar valores opuestos resultando cero", () => {
+            expect(sum(3, -3)).toBe(0);
+        });
+        test("debe restar dos números positivos", () => {
+            expect(subtract(10, 4)).toBe(6);
+        });
+        test("debe restar números negativos", () => {
+            expect(subtract(-3, -6)).toBe(3);
+        });
     });
-    test("sum: debe sumar números negativos", () => {
-        assert.strictEqual(sum(-3, -6), -9);
-    });
-    test("sum: debe sumar valores opuestos dando cero", () => {
-        assert.strictEqual(sum(3, -3), 0);
-    });
-    test("subtract: debe restar dos números positivos", () => {
-        assert.strictEqual(subtract(10, 4), 6);
-    });
-    test("subtract: debe restar números negativos", () => {
-        assert.strictEqual(subtract(-3, -6), 3);
-    });
+    describe("Calculadora: Operaciones Intermedias", () => {
+        test("debe multiplicar dos números positivos", () => {
+            expect(product(3, 6)).toBe(18);
+        });
+        test("debe multiplicar por cero", () => {
+            expect(product(5, 0)).toBe(0);
+        });
+        test("debe multiplicar números negativos", () => {
+            expect(product(-3, 6)).toBe(-18);
+        });
+        test("debe dividir dos números positivos", () => {
+            expect(divide(12, 4)).toBe(3);
+        });
+        test("debe dividir números negativos", () => {
+            expect(divide(-12, 4)).toBe(-3);
+        });
+        test("debe lanzar error al dividir por cero", () => {
+            expect(() => divide(10, 0)).toThrow("No se puede dividir por cero");
+        });
+    })
+    describe("Calculadora: Operaciones Avanzadas", () => {
+        test("debe elevar a una potencia positiva", () => {
+            expect(pow(2, 3)).toBe(8);
+        });
+        test("debe elevar a una potencia negativa", () => {
+            expect(pow(2, -2)).toBe(0.25);
+        });
+        test("debe lanzar error al elevar cero a exponente negativo", () => {
+            expect(() => pow(0, -2)).toThrow("No se puede elevar cero a un exponente negativo");
+        });
+        test("debe calcular raíz cuadrada de un número positivo", () => {
+            expect(sqrt(9)).toBe(3);
+        });
+        test("debe calcular raíz cuadrada de cero", () => {
+            expect(sqrt(0)).toBe(0);
+        });
+        test("debe lanzar error para número negativo", () => {
+            expect(() => sqrt(-1)).toThrow("No se puede calcular la raíz cuadrada de un número negativo");
+        });
+        test("debe calcular el módulo correctamente", () => {
+            expect(modulo(10, 3)).toBe(1);
+        });
+        test("debe calcular módulo con números negativos", () => {
+            expect(modulo(-10, 3)).toBe(-1);
+        });
+    })
 });
-describe("Calculadora: Operaciones Intermedias", () => {
-    test("product: debe multiplicar dos números positivos", () => {
-        assert.strictEqual(product(3, 6), 18);
-    });
-    test("product: debe multiplicar por cero", () => {
-        assert.strictEqual(product(5, 0), 0);
-    });
-    test("product: debe multiplicar números negativos", () => {
-        assert.strictEqual(product(-3, 6), -18);
-    });
-    test("divide: debe dividir dos números positivos", () => {
-        assert.strictEqual(divide(12, 4), 3);
-    });
-    test("divide: debe lanzar error al dividir entre cero", () => {
-        assert.throws(() => divide(10, 0), /No se puede dividir por cero/);
-    });
-    test("divide: debe dividir números negativos", () => {
-        assert.strictEqual(divide(-12, 4), -3);
-    });
-    test("modulo: debe calcular el resto correctamente", () => {
-        assert.strictEqual(modulo(10, 3), 1);
-    });
-    test("modulo: debe calcular resto con números negativos", () => {
-        assert.strictEqual(modulo(-10, 3), -1);
-    });
-})
-describe("Calculadora: Operaciones Avanzadas", () => {
-    test("pow: debe elevar a una potencia positiva", () => {
-        assert.strictEqual(pow(2, 3), 8);
-    });
-    test("pow: debe elevar a una potencia negativa", () => {
-        assert.strictEqual(pow(2, -2), 0.25);
-    });
-    test("pow: debe lanzar error al elevar cero a exponente negativo", () => {
-        assert.throws(() => pow(0, -2), /No se puede elevar cero a un exponente negativo/);
-    });
-    test("sqrt: debe calcular raíz cuadrada de un número positivo", () => {
-        assert.strictEqual(sqrt(9), 3);
-    });
-    test("sqrt: debe calcular raíz cuadrada de cero", () => {
-        assert.strictEqual(sqrt(0), 0);
-    });
-    test("sqrt: debe lanzar error para número negativo", () => {
-        assert.throws(() => sqrt(-1), /No se puede calcular la raíz cuadrada de un número negativo/);
-    });
-})
