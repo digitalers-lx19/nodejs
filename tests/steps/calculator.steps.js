@@ -2,7 +2,6 @@ import { Given, When, Then, Before } from "@cucumber/cucumber";
 import assert from "node:assert/strict";
 import { sum, subtract, product, divide, pow, sqrt, modulo } from "../../src/calculator.js";
 let a, b, result, error;
-
 Before(() => {
     a = undefined;
     b = undefined;
@@ -28,6 +27,7 @@ When("realiza una multiplicación", () => {
 When("realiza una división", () => {
     try {
         result = divide(a, b);
+        error = undefined;
     } catch (e) {
         error = e.message;
     }
@@ -38,11 +38,15 @@ When("realiza una potencia", () => {
 When("calcula la raíz cuadrada", () => {
     try {
         result = sqrt(a);
+        error = undefined;
     } catch (e) {
         error = e.message;
     }
 });
 When("calcula el residuo", () => {
+    result = modulo(a, b);
+});
+When("calcula el módulo", () => {
     result = modulo(a, b);
 });
 Then("el resultado debe ser {int}", (expected) => {

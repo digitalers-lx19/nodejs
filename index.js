@@ -4,6 +4,6 @@ console.log(
     "\nPresiona CTRL+C para terminar la ejecucion"
 );
 
-import { add, subtract, multiply, divide, power, sqrt, modulo } from "./src/calculator.js";
+import { sum, subtract, product, divide, pow, sqrt, modulo } from "./src/calculator.js";
 
-export { add, subtract, multiply, divide, power, sqrt, modulo };
+export { sum, subtract, product, divide, pow, sqrt, modulo };
